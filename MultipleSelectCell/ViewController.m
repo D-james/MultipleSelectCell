@@ -83,7 +83,7 @@
 - (void)selectedBtnClick {
     if (!self.selectedBtn.selected) {
         self.selectedBtn.selected = YES;
-        
+        [self.deleteArr removeAllObjects];
         for (int i = 0; i < self.dataArr.count; i++) {
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
@@ -94,6 +94,7 @@
         [self.deleteBtn setTitle:[NSString stringWithFormat:@"删除(%lu)",self.deleteNum] forState:UIControlStateNormal];
     }else{
         self.selectedBtn.selected = NO;
+        [self.deleteArr removeAllObjects];
         for (int i = 0; i < self.dataArr.count; i++) {
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
