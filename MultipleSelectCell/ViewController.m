@@ -88,7 +88,7 @@
         for (int i = 0; i < self.dataArr.count; i++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
             [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
-            
+ #warning 自定义cell选中方式请打开下面注释（第一种方式）           
 //            NSArray *subviews = [[self.tableView cellForRowAtIndexPath:indexPath] subviews];
 //            for (id subCell in subviews) {
 //                if ([subCell isKindOfClass:[UIControl class]]) {
@@ -145,12 +145,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"cellID";
     
-#warning 如果想要自定义cell的选中样式替换系统的蓝色圆圈，用DSWTableViewCell
+#warning 如果想要自定义cell的选中样式替换系统的蓝色圆圈，用DSWTableViewCell（第二种方式）
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row]];
@@ -170,12 +170,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#warning 自定义cell选中方式请打开下面注释（第一种方式）
 //     NSArray *subviews = [[tableView cellForRowAtIndexPath:indexPath] subviews];
 //    for (id subCell in subviews) {
 //        if ([subCell isKindOfClass:[UIControl class]]) {
 //            
 //            for (UIImageView *circleImage in [subCell subviews]) {
-//                circleImage.image = [UIImage imageNamed:@"CellButtonSelected"];
+//                
+//                    circleImage.image = [UIImage imageNamed:@"CellButtonSelected"];
+//                
 //            }
 //        }
 //        
@@ -187,6 +190,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    #warning 自定义cell选中方式请打开下面注释（第一种方式）
+//  NSArray *subviews = [[tableView cellForRowAtIndexPath:indexPath] subviews];
+//    for (id subCell in subviews) {
+//        if ([subCell isKindOfClass:[UIControl class]]) {
+//            
+//            for (UIImageView *circleImage in [subCell subviews]) {
+//
+//                circleImage.image = [UIImage imageNamed:@"CellButton"];
+//
+//            }
+//        }
+//        
+//    }
     [self.deleteArr removeObject:[self.dataArr objectAtIndex:indexPath.row]];
     self.deleteNum -= 1;
     [self.deleteBtn setTitle:[NSString stringWithFormat:@"删除(%lu)",self.deleteNum] forState:UIControlStateNormal];
