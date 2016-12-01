@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "UIButton+Extention.h"
+#import "DSWTableViewCell.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -85,9 +86,20 @@
         self.selectedBtn.selected = YES;
         [self.deleteArr removeAllObjects];
         for (int i = 0; i < self.dataArr.count; i++) {
-            
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
             [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
+            
+//            NSArray *subviews = [[self.tableView cellForRowAtIndexPath:indexPath] subviews];
+//            for (id subCell in subviews) {
+//                if ([subCell isKindOfClass:[UIControl class]]) {
+//                    
+//                    for (UIImageView *circleImage in [subCell subviews]) {
+//                        circleImage.image = [UIImage imageNamed:@"CellButtonSelected"];
+//                    }
+//                }
+//                
+//            }
+            
         }
         [self.deleteArr addObjectsFromArray:self.dataArr];
         self.deleteNum = self.dataArr.count;
@@ -133,16 +145,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"cellID";
     
+#warning 如果想要自定义cell的选中样式替换系统的蓝色圆圈，用DSWTableViewCell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row]];
 
     return cell;
 }
+
 
 #pragma mark - tableViewDelegate
 
@@ -155,6 +170,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//     NSArray *subviews = [[tableView cellForRowAtIndexPath:indexPath] subviews];
+//    for (id subCell in subviews) {
+//        if ([subCell isKindOfClass:[UIControl class]]) {
+//            
+//            for (UIImageView *circleImage in [subCell subviews]) {
+//                circleImage.image = [UIImage imageNamed:@"CellButtonSelected"];
+//            }
+//        }
+//        
+//    }
     [self.deleteArr addObject:[self.dataArr objectAtIndex:indexPath.row]];
     self.deleteNum += 1;
     [self.deleteBtn setTitle:[NSString stringWithFormat:@"删除(%lu)",self.deleteNum] forState:UIControlStateNormal];

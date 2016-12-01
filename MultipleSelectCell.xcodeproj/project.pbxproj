@@ -25,6 +25,7 @@
 		1A65853A1D6095BE00450BC4 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A65852D1D6095BE00450BC4 /* View+MASAdditions.m */; };
 		1A65853B1D6095BE00450BC4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6585301D6095BE00450BC4 /* ViewController+MASAdditions.m */; };
 		1A65853E1D60967E00450BC4 /* UIButton+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A65853D1D60967E00450BC4 /* UIButton+Extention.m */; };
+		AF052C3E1DF013A70046F5A5 /* DSWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF052C3D1DF013A70046F5A5 /* DSWTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		1A6585301D6095BE00450BC4 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		1A65853C1D60967E00450BC4 /* UIButton+Extention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extention.h"; sourceTree = "<group>"; };
 		1A65853D1D60967E00450BC4 /* UIButton+Extention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extention.m"; sourceTree = "<group>"; };
+		AF052C3C1DF013A70046F5A5 /* DSWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSWTableViewCell.h; sourceTree = "<group>"; };
+		AF052C3D1DF013A70046F5A5 /* DSWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSWTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				1A6585031D60954500450BC4 /* AppDelegate.m */,
 				1A6585051D60954500450BC4 /* ViewController.h */,
 				1A6585061D60954500450BC4 /* ViewController.m */,
+				AF052C3C1DF013A70046F5A5 /* DSWTableViewCell.h */,
+				AF052C3D1DF013A70046F5A5 /* DSWTableViewCell.m */,
 				1A65853C1D60967E00450BC4 /* UIButton+Extention.h */,
 				1A65853D1D60967E00450BC4 /* UIButton+Extention.m */,
 				1A6585081D60954500450BC4 /* Main.storyboard */,
@@ -240,6 +245,7 @@
 				1A65853A1D6095BE00450BC4 /* View+MASAdditions.m in Sources */,
 				1A6585361D6095BE00450BC4 /* MASViewAttribute.m in Sources */,
 				1A6585331D6095BE00450BC4 /* MASConstraint.m in Sources */,
+				AF052C3E1DF013A70046F5A5 /* DSWTableViewCell.m in Sources */,
 				1A6585341D6095BE00450BC4 /* MASConstraintMaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultipleSelectCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dj.MultipleSelectCell;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dj.MultipleSelectCell123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -365,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultipleSelectCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dj.MultipleSelectCell;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dj.MultipleSelectCell123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -389,6 +395,7 @@
 				1A6585151D60954500450BC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
